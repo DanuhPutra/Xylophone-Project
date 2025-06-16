@@ -16,19 +16,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+//button pressed
     @IBAction func keyPressed(_ sender: UIButton) {
         playSound(soundName: sender.currentTitle!)
         delayColor(for: sender)
     }
-    
+//    play sound
     func playSound(soundName: String){
         let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
         
     }
-    
+//    delay opacity background
     func delayColor(for button: UIButton){
         UIView.animate(withDuration: 0.05) {
             button.alpha = 0.5
